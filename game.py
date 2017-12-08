@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, './Turns')
+
 from deck import Deck
 from player import Player
 from preflop import Preflop
