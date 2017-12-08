@@ -3,7 +3,7 @@ sys.path.insert(0, './Turns')
 
 from deck import Deck
 from player import Player
-from preflop import Preflop
+from turn import Turn
 
 class Game:
     def __init__(self, baseCash):
@@ -15,12 +15,10 @@ class Game:
         self.deck.shuffle()
 
         self.initPlayers()
-
+        self.board = []
         # to be changed
         self.smallBlind = 10
         self.bigBlind = 20
-
-        self.preflop = Preflop(self.players, self.smallBlind, self.bigBlind)
 
     def initPlayers(self):
         self.players = []
@@ -30,7 +28,20 @@ class Game:
         self.players.append(Player('Patrick Bialès', self.baseCash))
 
     def run(self):
-        self.globalPot += self.preflop.run()
+        # Preflop
+        self.globalPot += Turn(self.players, self.board, self.smallBlind, self.bigBlind).run()
+        self.emptyPlayersPots()
+
+        # Flop
+        self.globalPot += Turn(self.players, self.board, self.smallBlind, self.bigBlind).run()
+        self.emptyPlayersPots()
+
+        #Turn
+        self.globalPot += Turn(self.players, self.board, self.smallBlind, self.bigBlind).run()
+        self.emptyPlayersPots()
+
+        #River
+        self.globalPot += Turn(self.players, self.board, self.smallBlind, self.bigBlind).run()
         self.emptyPlayersPots()
 
     def displayPlayers(self):

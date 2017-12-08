@@ -1,6 +1,7 @@
-class Preflop:
-    def __init__(self, players, smallBlind, bigBlind):
+class Turn:
+    def __init__(self, players, board, smallBlind, bigBlind):
         self.players = players
+        self.board = board
         self.smallBlind = smallBlind
         self.bigBlind = bigBlind
         self.lastBet = bigBlind
@@ -13,7 +14,7 @@ class Preflop:
         decision = None
         while self.players[playerIndex] is not self.lastBettingPlayer:
             currentPlayer = self.players[playerIndex]
-            decision = currentPlayer.decide([], self.lastBet)
+            decision = currentPlayer.decide(self.board, self.lastBet)
             playerIndex = (playerIndex + 1) % len(self.players)
             if (decision == -1):
                 # flop
