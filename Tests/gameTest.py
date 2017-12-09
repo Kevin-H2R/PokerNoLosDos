@@ -9,3 +9,5 @@ class GameTest(Test):
         self.game.dealBoardCard(3)
         self.assertEqual(3, len(self.game.board))
         self.assertEqual(49, self.game.deck.length())
+        for card in self.game.board:
+            self.assertNotIn(card, self.game.deck.cards)
