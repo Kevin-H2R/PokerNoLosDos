@@ -27,3 +27,14 @@ class Player:
 
     def display(self):
         print(self.name + ': cash = ' + str(self.cash) + ', pot = ' + str(self.pot))
+
+    def addCard(self, card):
+        if self.card1 == None:
+            self.card1 = card
+        else:
+            self.card2 = card
+
+    def displayCards(self):
+        text1 = self.card1.toString() if self.card1 != None else 'NONE'
+        text2 = self.card2.toString() if self.card2 != None else 'NONE'
+        print(text1 + ' - ' + text2)

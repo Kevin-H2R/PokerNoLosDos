@@ -4,4 +4,7 @@ class Card:
         self.color = color
 
     def display(self):
-        print(str(self.value) + ' ' + self.color)
+        print(self.toString())
+
+    def toString(self):
+        return (str(self.value) + ' ' + self.color)
