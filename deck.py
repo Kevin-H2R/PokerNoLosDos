@@ -19,6 +19,6 @@ class Deck:
     def shuffle(self):
         shuffle(self.cards)
 
-    def dealCard(self, player):
+    def dealCard(self):
         card = self.cards.pop()
-        player.addCard(card)
+        return card

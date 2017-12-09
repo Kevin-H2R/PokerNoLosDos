@@ -30,7 +30,7 @@ class Game:
         # Preflop
         self.globalPot += Turn(self.players, self.board, self.smallBlind, self.bigBlind).run()
         self.emptyPlayersPots()
-
+        self.dealBoardCard(3)
         # Flop
         self.globalPot += Turn(self.players, self.board, self.smallBlind, self.bigBlind).run()
         self.emptyPlayersPots()
@@ -50,3 +50,7 @@ class Game:
     def emptyPlayersPots(self):
         for player in self.players:
             player.pot = 0
+
+    def dealBoardCard(self, number):
+        for i in range(number):
+            self.board.append(self.deck.dealCard())
