@@ -5,7 +5,6 @@ sys.path.append(
 from test import Test
 from deck import Deck
 from player import Player
-import inspect
 
 class DeckTest(Test):
 
@@ -16,5 +15,5 @@ class DeckTest(Test):
     def testDeckShouldDealCardToPlayerCorrectly(self):
         self.deck.fill()
         self.player.addCard(self.deck.dealCard())
-        self.assertEqual(self.player.card1.toString(), '13 C' , inspect.stack()[0][3])
-        self.assertNone(self.player.card2, inspect.stack()[0][3])
+        self.assertEqual(self.player.card1.toString(), '13 C' )
+        self.assertNone(self.player.card2)

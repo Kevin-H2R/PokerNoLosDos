@@ -1,7 +1,11 @@
 from deckTest import DeckTest
+from gameTest import GameTest
 
-deckTest = DeckTest()
-for name in dir(deckTest):
-    if name.startswith('test'):
-        method = getattr(deckTest, name)
-        method()
+def executeTest(test):
+    for name in dir(test):
+        if name.startswith('test'):
+            method = getattr(test, name)
+            method()
+
+executeTest(DeckTest())
+executeTest(GameTest())

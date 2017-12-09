@@ -1,0 +1,11 @@
+from test import Test
+from game import Game
+class GameTest(Test):
+
+    def __init__(self):
+        self.game = Game(5000)
+
+    def testBoardCardAreDealtCorrectly(self):
+        self.game.dealBoardCard(3)
+        self.assertEqual(3, len(self.game.board))
+        self.assertEqual(49, self.game.deck.length())

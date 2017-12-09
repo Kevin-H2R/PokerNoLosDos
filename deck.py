@@ -22,3 +22,6 @@ class Deck:
     def dealCard(self):
         card = self.cards.pop()
         return card
+
+    def length(self):
+        return len(self.cards)
