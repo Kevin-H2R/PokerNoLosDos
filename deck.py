@@ -1,6 +1,7 @@
 from card import Card
 from random import shuffle
 from player import Player
+from colors import Colors
 
 class Deck:
     def __init__(self):
@@ -8,7 +9,7 @@ class Deck:
 
 
     def fill(self):
-        for color in ['H', 'D', 'S', 'C']:
+        for color in Colors:
             for value in range(1, 14):
                 self.cards.append(Card(value, color))
 
