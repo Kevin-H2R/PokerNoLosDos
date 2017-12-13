@@ -15,5 +15,5 @@ class DeckTest(Test):
     def testDeckShouldDealCardToPlayerCorrectly(self):
         self.deck.fill()
         self.player.addCard(self.deck.dealCard())
-        self.assertEqual(self.player.card1.toString(), '13 C' )
+        self.assertEqual(self.player.card1.toString(), '13 CLUB' )
         self.assertNone(self.player.card2)

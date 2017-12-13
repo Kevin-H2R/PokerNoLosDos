@@ -7,4 +7,4 @@ class Card:
         print(self.toString())
 
     def toString(self):
-        return (str(self.value) + ' ' + self.color)
+        return (str(self.value) + ' ' + self.color.name)
