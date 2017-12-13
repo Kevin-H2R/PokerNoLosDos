@@ -34,10 +34,12 @@ class Game:
         # Flop
         self.globalPot += Turn(self.players, self.board, self.smallBlind, self.bigBlind).run()
         self.emptyPlayersPots()
+        self.dealBoardCard(1)
 
         #Turn
         self.globalPot += Turn(self.players, self.board, self.smallBlind, self.bigBlind).run()
         self.emptyPlayersPots()
+        self.dealBoardCard(1)
 
         #River
         self.globalPot += Turn(self.players, self.board, self.smallBlind, self.bigBlind).run()
