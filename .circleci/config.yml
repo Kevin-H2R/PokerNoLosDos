@@ -53,4 +53,4 @@ jobs:
 general:
   branches:
     only:
-        dev
+        - dev
