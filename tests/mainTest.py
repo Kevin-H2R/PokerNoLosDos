@@ -12,8 +12,14 @@ def executeTest(test):
             method = getattr(test, name)
             method()
 
+returnValue = 0
+tests = [DeckTest(), GameTest()]
+for test in tests:
+    executeTest(test)
+    if test.hasFailed:
+        returnValue = -1
 executeTest(DeckTest())
 executeTest(GameTest())
 print('\n--------------------------------------\n')
 print(str(count) + '  tests executed')
-sys.exit(-1)
+sys.exit(returnValue)
