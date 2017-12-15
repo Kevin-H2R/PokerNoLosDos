@@ -1,16 +1,27 @@
 import inspect
 
 class Test:
+
+    def __init__(self):
+        hasFailed = False
+
     def assertEqual(self, expected, actual):
-        self.assertCondition(expected == actual)
+        return self.assertCondition(expected == actual)
 
     def assertNone(self, element):
-        self.assertCondition(element is None)
+        return self.assertCondition(element is None)
 
     def assertNotIn(self, element, array):
-        self.assertCondition(element not in array)
+        return self.assertCondition(element not in array)
 
     def assertCondition(self, condition):
         message = inspect.stack()[2][3] + ' --- '
-        message += 'OK' if condition else 'FAILED'
+        hasFailed = False
+        responseMessage = 'OK'
+        if not (condition):
+            responseMessage = 'FAILED'
+            hasFailed = True
+
+        message += responseMessage
         print(message)
+        self.hasFailed = hasFailed
