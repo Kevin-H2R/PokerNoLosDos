@@ -17,13 +17,10 @@ returnValue = 0
 tests = []
 # tests.append(DeckTest())
 # tests.append(GameTest())
-tests.append(HandEvaluatorTest())
-for test in tests:
+tests.append(HandEvaluatorTest())for test in tests:
     executeTest(test)
     if test.hasFailed:
         returnValue = -1
-# executeTest(DeckTest())
-# executeTest(GameTest())
 print('\n--------------------------------------\n')
 print(str(count) + '  tests executed')
 sys.exit(returnValue)
