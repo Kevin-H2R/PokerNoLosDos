@@ -26,4 +26,8 @@ for test in tests:
 # executeTest(GameTest())
 print('\n--------------------------------------\n')
 print(str(count) + '  tests executed')
+<<<<<<< 52efcd479db027644d17a2439315a8c52ba6e43e
 sys.exit(returnValue)
+=======
+sys.exit(-1)
+>>>>>>> Test if tests fail when returning -1
