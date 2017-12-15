@@ -1,3 +1,5 @@
+import sys
+
 from deckTest import DeckTest
 from gameTest import GameTest
 
@@ -14,3 +16,4 @@ executeTest(DeckTest())
 executeTest(GameTest())
 print('\n--------------------------------------\n')
 print(str(count) + '  tests executed')
+sys.exit(-1)
