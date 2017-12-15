@@ -3,6 +3,7 @@ from game import Game
 class GameTest(Test):
 
     def __init__(self):
+        Test.__init__(self)
         self.game = Game(5000)
 
     def testBoardCardAreDealtCorrectly(self):

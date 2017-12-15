@@ -9,11 +9,12 @@ from player import Player
 class DeckTest(Test):
 
     def __init__(self):
+        Test.__init__(self)
         self.deck = Deck()
         self.player = Player('Test Tset', 5000)
 
     def testDeckShouldDealCardToPlayerCorrectly(self):
         self.deck.fill()
         self.player.addCard(self.deck.dealCard())
-        self.assertEqual(self.player.card1.toString(), '13 CACA' )
+        self.assertEqual(self.player.card1.toString(), '13 CLUB' )
         self.assertNone(self.player.card2)

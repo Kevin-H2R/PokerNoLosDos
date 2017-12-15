@@ -18,8 +18,8 @@ for test in tests:
     executeTest(test)
     if test.hasFailed:
         returnValue = -1
-executeTest(DeckTest())
-executeTest(GameTest())
+# executeTest(DeckTest())
+# executeTest(GameTest())
 print('\n--------------------------------------\n')
 print(str(count) + '  tests executed')
 sys.exit(returnValue)
