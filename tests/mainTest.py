@@ -26,6 +26,7 @@ for test in tests:
     executeTest(test)
     if test.hasFailed:
         returnValue = -1
+<<<<<<< eefaba40db34fb4c2f7b2b4d7816b14bc26c637e
 <<<<<<< abd728a114f02ad5a9df5cc16b0e4ef90d960764
 # executeTest(DeckTest())
 # executeTest(GameTest())
@@ -39,6 +40,10 @@ sys.exit(-1)
 =======
 executeTest(DeckTest())
 executeTest(GameTest())
+=======
+# executeTest(DeckTest())
+# executeTest(GameTest())
+>>>>>>> Fixes unit tests
 print('\n--------------------------------------\n')
 print(str(count) + '  tests executed')
 sys.exit(returnValue)

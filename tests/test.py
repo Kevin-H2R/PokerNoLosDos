@@ -3,7 +3,7 @@ import inspect
 class Test:
 
     def __init__(self):
-        hasFailed = False
+        self.hasFailed = False
 
     def assertEqual(self, expected, actual):
         return self.assertCondition(expected == actual)
@@ -16,12 +16,10 @@ class Test:
 
     def assertCondition(self, condition):
         message = inspect.stack()[2][3] + ' --- '
-        hasFailed = False
         responseMessage = 'OK'
         if not (condition):
             responseMessage = 'FAILED'
-            hasFailed = True
+            self.hasFailed = True
 
         message += responseMessage
         print(message)
-        self.hasFailed = hasFailed
