@@ -14,6 +14,12 @@ class Test:
     def assertNotIn(self, element, array):
         return self.assertCondition(element not in array)
 
+    def assertTrue(self, element):
+        return self.assertCondition(element)
+
+    def assertFalse(self, element):
+        return self.assertCondition(not element)
+
     def assertCondition(self, condition):
         message = inspect.stack()[2][3] + ' --- '
         responseMessage = 'OK'

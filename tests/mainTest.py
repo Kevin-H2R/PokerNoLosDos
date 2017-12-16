@@ -15,8 +15,8 @@ def executeTest(test):
 
 returnValue = 0
 tests = []
-# tests.append(DeckTest())
-# tests.append(GameTest())
+tests.append(DeckTest())
+tests.append(GameTest())
 tests.append(HandEvaluatorTest())
 for test in tests:
     executeTest(test)
