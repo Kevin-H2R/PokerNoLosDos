@@ -2,6 +2,7 @@ import sys
 
 from deckTest import DeckTest
 from gameTest import GameTest
+from handEvaluatorTest import HandEvaluatorTest
 
 count = 0
 def executeTest(test):
@@ -13,7 +14,10 @@ def executeTest(test):
             method()
 
 returnValue = 0
-tests = [DeckTest(), GameTest()]
+tests = []
+# tests.append(DeckTest())
+# tests.append(GameTest())
+tests.append(HandEvaluatorTest())
 for test in tests:
     executeTest(test)
     if test.hasFailed:
