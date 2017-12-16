@@ -9,6 +9,7 @@ from player import Player
 class DeckTest(Test):
 
     def __init__(self):
+        Test.__init__(self)
         self.deck = Deck()
         self.player = Player('Test Tset', 5000)
 

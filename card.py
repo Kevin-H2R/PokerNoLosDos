@@ -8,3 +8,6 @@ class Card:
 
     def toString(self):
         return (str(self.value) + ' ' + self.color.name)
+
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
