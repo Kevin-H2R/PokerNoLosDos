@@ -17,7 +17,8 @@ returnValue = 0
 tests = []
 # tests.append(DeckTest())
 # tests.append(GameTest())
-tests.append(HandEvaluatorTest())for test in tests:
+tests.append(HandEvaluatorTest())
+for test in tests:
     executeTest(test)
     if test.hasFailed:
         returnValue = -1
