@@ -47,7 +47,3 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
-general:
-  branches:
-    only:
-        - dev
