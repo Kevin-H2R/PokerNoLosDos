@@ -11,9 +11,9 @@ class HandEvaluator:
 
     def isRoyalFlush(self):
         foundAce = None
-        for color in Colors:
-            if Card(1, color) in self.cards:
-                foundAce = color
+        for card in self.cards:
+            if card.value == 1:
+                foundAce = card.color
                 break
         if foundAce is  None:
             return False
@@ -21,8 +21,6 @@ class HandEvaluator:
             if Card(i, foundAce) not in self.cards:
                 return False
         return True
-
-
 
     def allCardsToArray(self, card1, card2, board):
         board.append(card1)
