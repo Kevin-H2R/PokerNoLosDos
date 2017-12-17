@@ -3,6 +3,7 @@ import sys
 from deckTest import DeckTest
 from gameTest import GameTest
 from handEvaluatorTest import HandEvaluatorTest
+from cardTest import CardTest
 
 count = 0
 def executeTest(test):
@@ -18,6 +19,7 @@ tests = []
 tests.append(DeckTest())
 tests.append(GameTest())
 tests.append(HandEvaluatorTest())
+tests.append(CardTest())
 for test in tests:
     executeTest(test)
     if test.hasFailed:
