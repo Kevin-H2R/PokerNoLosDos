@@ -11,9 +11,9 @@ class HandEvaluator:
 
     def isRoyalFlush(self):
         foundAce = None
-        for color in Colors:
-            if Card(1, color) in self.cards:
-                foundAce = color
+        for card in self.cards:
+            if card.value == 1:
+                foundAce = card.color
                 break
         if foundAce is  None:
             return False
@@ -22,6 +22,19 @@ class HandEvaluator:
                 return False
         return True
 
+    def isStraightFlush(self):
+        maxValue = self.cards[0].value
+        minValue = maxValue
+        color = self.cards[0].color
+        #ugly reiteration over first card
+        for card in self.cards:
+            if card.color != color:
+                return False
+            if card.value < minValue:
+                minValue = card.value
+            elif card.value > maxValue:
+                maxValue = card.value
+        return ((maxValue - minValue) < 5)
 
 
     def allCardsToArray(self, card1, card2, board):
