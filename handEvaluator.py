@@ -22,6 +22,21 @@ class HandEvaluator:
                 return False
         return True
 
+    def isStraightFlush(self):
+        maxValue = self.cards[0].value
+        minValue = maxValue
+        color = self.cards[0].color
+        #ugly reiteration over first card
+        for card in self.cards:
+            if card.color != color:
+                return False
+            if card.value < minValue:
+                minValue = card.value
+            elif card.value > maxValue:
+                maxValue = card.value
+        return ((maxValue - minValue) < 5)
+
+
     def allCardsToArray(self, card1, card2, board):
         board.append(card1)
         board.append(card2)
